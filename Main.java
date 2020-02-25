@@ -1,45 +1,33 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-/**
- * Main
- */
-public class Main {
+class Main {
     public static void main(String[] args) {
-
-        System.out.println("Indtast postnummer: ");
+        System.out.println("Bestilling: ");
 
         Scanner scanner = new Scanner(System.in);
 
-        int postnummer = scanner.nextInt();
+        int nr = scanner.nextInt();
 
-        ArrayList<PostInfo> list = new ArrayList<PostInfo>();
+        ArrayList<Pizza> list = new ArrayList<Pizza>();
 
-        list.add(new PostInfo(2610, "Rødovre"));
-        list.add(new PostInfo(2700, "Husum"));
+        list.add(new Pizza(1, "Hawaii", "Ost, skinke og ananas"));
+
+        list.add(new Pizza(2, "Margherita", "Tomat og ost"));
+
+        list.add(new Pizza(3, "Vesuvio", "Skinke og ost"));
+
+        list.add(new Pizza(4, "Napoli", "Tomat, ost og pepperoni"));
+
+        list.add(new Pizza(5, "Marmaris", "Tomat, ost, skinke, champignon og rejer"));
+
+        list.add(new Pizza(6, "Capricciosa", "Med tomat, ost, skinke og champignon"));
 
         for (int i = 0; i < list.size(); i++) {
-            if (postnummer == list.get(i).getPostNummer()) {
-                System.out.println("" + list.get(i));
-            }
+            if (nr == list.get(i).getnr())
+                System.out.println("Du har bestilt Pizza nr: " + list.get(i));
 
-            // System.out.println("li: " + i + list.toString());
         }
 
-        // PostInfo test = new PostInfo(2610, "Rødovre");
-
-        // System.out.println(test.toString());
-
-        // PostInfo test = new PostInfo(2610, "Rødovre");
-
-        // System.out.println("" + test);
-
-        // System.out.println(test.toString());
-
-        // System.out.println("Indtast postnummer: ");
-
-        // Scanner scanner = new Scanner(System.in);
-
     }
-
 }
